@@ -16,7 +16,15 @@ Inicializando o serviço: `mvn spring-boot:run`
 
 Para enviar dados de testes, pode-se utilizar um cliente chamado `Postman` ou executar diretamente o comando `curl` abaixo:
 ```shell
-
+curl --location --request POST 'localhost:8082/api/v1/signals' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "exchange": "BINANCE",
+    "ticker": "BTCUSDT",
+    "date": "2022-10-12T19:13:00",
+    "type": "BUY",
+    "price": 19150.00
+}'
 ``` 
 
 ## Consumer Service
