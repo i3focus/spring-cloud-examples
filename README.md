@@ -43,5 +43,11 @@ String de conexão (de acordo com dados presente no docker compose yml): `mongod
 
 Para consultar informações de sinais recebidos via consume de mensagem, processada e armazenada em banco de dados, pode-se utilizar um cliente chamado `Postman` ou executar diretamente o comando `curl` abaixo:
 ```shell
-
+curl --location --request GET 'localhost:8081/api/v1/signals'
 ``` 
+
+Para fins de cuidado com performance e disponibilidade da aplicação, a requisição de sinais é paginada e por padrão, devolve sempre os 20 mais novos sinais cadastrados na base de dados.
+Segue curl que permite manipular a paginação: 
+```shell
+curl --location --request GET 'localhost:8081/api/v1/signals?page=0&size=30&sort=date,asc'
+```
