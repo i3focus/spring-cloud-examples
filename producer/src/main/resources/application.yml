@@ -1,0 +1,11 @@
+server:
+  port: 8082
+  http2:
+    enabled: true
+  shutdown: graceful
+
+spring:
+  application:
+    name: producer-service
+  rabbitmq:
+    addresses: amqps://fvawagon:uIVAEFlZCv3j9TcPJx7s95ncnIWXyRnB@woodpecker.rmq.cloudamqp.com/fvawagon

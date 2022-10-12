@@ -1,0 +1,19 @@
+server:
+  port: 8081
+  http2:
+    enabled: true
+  shutdown: graceful
+
+spring:
+  application:
+    name: consumer-service
+  rabbitmq:
+    addresses: amqps://fvawagon:uIVAEFlZCv3j9TcPJx7s95ncnIWXyRnB@woodpecker.rmq.cloudamqp.com/fvawagon
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: signaldb
+      authentication-database: admin
+      username: consumer_user
+      password: consumer_pass
