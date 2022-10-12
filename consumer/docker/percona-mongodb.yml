@@ -4,18 +4,13 @@ services:
     image: percona/percona-server-mongodb:5.0.13
     restart: on-failure
     ports:
-      - 27017:27017
-    volumes:
-      - percona-mongodb:/data/db
+      - "27017:27017"
     environment:
       MONGO_INITDB_DATABASE: signaldb
-      MONGO_INITDB_ROOT_USERNAME: consumer.user
-      MONGO_INITDB_ROOT_PASSWORD: consumer.pass
+      MONGO_INITDB_ROOT_USERNAME: consumer_user
+      MONGO_INITDB_ROOT_PASSWORD: consumer_pass
     networks:
-      - proxy
-
-volumes:
-  percona-mongodb:
+      - percona-mongodb
 
 networks:
-  proxy:
+  percona-mongodb:
