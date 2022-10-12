@@ -4,6 +4,7 @@ import br.com.i3focus.consumer.domain.Signal
 import br.com.i3focus.consumer.domain.SignalRepository
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
+import org.springframework.data.domain.Sort
 import org.springframework.data.web.PageableDefault
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
@@ -19,7 +20,8 @@ class SignalController(private val signalRepository: SignalRepository) {
         @PageableDefault(
             page = 0,
             size = 20,
-            sort = ["date"]
+            sort = ["date"],
+            direction = Sort.Direction.DESC
         )
         pageable: Pageable
     ): ResponseEntity<Page<Signal>> =
