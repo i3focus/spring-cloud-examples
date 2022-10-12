@@ -1,2 +1,2 @@
-# spring-cloud-examples
-spring-cloud-examples
+# Spring Cloud Stream Examples
+
