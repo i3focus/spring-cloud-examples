@@ -9,3 +9,9 @@ spring:
     name: producer-service
   rabbitmq:
     addresses: amqps://fvawagon:uIVAEFlZCv3j9TcPJx7s95ncnIWXyRnB@woodpecker.rmq.cloudamqp.com/fvawagon
+  cloud:
+    stream:
+      bindings:
+        signalsCreatedEventProducer-out-0:
+          destination: signal.v1.event.created
+          group: signals

@@ -24,7 +24,7 @@ spring:
       bindings:
         signalsCreatedEventListener-in-0:
           destination: signal.v1.event.created
-          group: consumer.service
+          group: signals
       rabbit:
         bindings:
           signalsCreatedEventListener-in-0:
