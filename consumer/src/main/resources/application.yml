@@ -17,3 +17,16 @@ spring:
       authentication-database: admin
       username: consumer_user
       password: consumer_pass
+  cloud:
+    stream:
+      function:
+        definition: signalsCreatedEventListener
+      bindings:
+        signalsCreatedEventListener-in-0:
+          destination: signal.v1.event.created
+          group: consumer.service
+      rabbit:
+        bindings:
+          signalsCreatedEventListener-in-0:
+            consumer:
+              auto-bind-dlq: true
