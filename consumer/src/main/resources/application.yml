@@ -20,13 +20,13 @@ spring:
   cloud:
     stream:
       function:
-        definition: signalsCreatedEventListener
+        definition: signalCreatedEventListener
       bindings:
-        signalsCreatedEventListener-in-0:
+        signalCreatedEventListener-in-0:
           destination: signal.v1.event.created
           group: signals
       rabbit:
         bindings:
-          signalsCreatedEventListener-in-0:
+          signalCreatedEventListener-in-0:
             consumer:
               auto-bind-dlq: true
