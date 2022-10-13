@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController
 @RestController
 @RequestMapping("/api/v1/signals")
 class SignalController(private val signalRepository: SignalRepository) {
-
     @GetMapping
     fun getAllPageableSignals(
         @PageableDefault(
