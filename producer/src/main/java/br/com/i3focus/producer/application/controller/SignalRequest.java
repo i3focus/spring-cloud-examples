@@ -71,6 +71,6 @@ public class SignalRequest {
                 ", date=" + date +
                 ", type='" + type + '\'' +
                 ", price=" + price +
-                '}';
+                "  }";
     }
 }
